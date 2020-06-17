@@ -23,7 +23,13 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier",
+    "eslint-plugin-import-helpers"
+  ],
   "rules": {
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
@@ -46,6 +52,14 @@
       {
         "ts": "never",
         "tsx": "never"
+      }
+    ],
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "newlinesBetween": "always",
+        "groups": ["/^react/", "module", "parent", "sibling", "index"],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ]
   },
